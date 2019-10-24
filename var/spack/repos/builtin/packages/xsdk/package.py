@@ -44,7 +44,7 @@ class Xsdk(BundlePackage):
     depends_on('hypre@xsdk-0.2.0~internal-superlu', when='@xsdk-0.2.0')
 
     depends_on('mfem@develop+mpi+hypre+superlu-dist+petsc~sundials+examples+miniapps', when='@develop')
-    depends_on('mfem@4.0.1-xsdk+mpi+hypre+superlu-dist+petsc~sundials+examples+miniapps', when='@0.5.0')
+    depends_on('mfem@4.0.1-xsdk+mpi+hypre+superlu-dist+petsc+sundials+examples+miniapps', when='@0.5.0')
     depends_on('mfem@3.4.0+mpi+hypre+superlu-dist+petsc+sundials+examples+miniapps', when='@0.4.0')
     depends_on('mfem@3.3.2+mpi+hypre+superlu-dist+petsc+sundials+examples+miniapps', when='@0.3.0')
 
@@ -96,9 +96,8 @@ class Xsdk(BundlePackage):
     depends_on('alquimia@xsdk-0.3.0', when='@0.3.0')
     depends_on('alquimia@xsdk-0.2.0', when='@xsdk-0.2.0')
 
-    depends_on('sundials+superlu-dist', when='@0.5.0: %gcc@6.1:')
-    depends_on('sundials@develop~int64+hypre', when='@develop')
-    depends_on('sundials@5.0.0~int64+hypre', when='@0.5.0')
+    depends_on('sundials@develop~int64+hypre+petsc+superlu-dist', when='@develop')
+    depends_on('sundials@5.0.0~int64+hypre+petsc+superlu-dist', when='@0.5.0')
     depends_on('sundials@3.2.1~int64+hypre', when='@0.4.0')
     depends_on('sundials@3.1.0~int64+hypre', when='@0.3.0')
 
@@ -111,10 +110,10 @@ class Xsdk(BundlePackage):
     depends_on('magma@2.4.0', when='@0.4.0 +cuda')
     depends_on('magma@2.2.0', when='@0.3.0 +cuda')
 
-    depends_on('amrex@develop+sundials', when='@develop %intel')
-    depends_on('amrex@develop+sundials', when='@develop %gcc')
-    depends_on('amrex@19.08+sundials', when='@0.5.0 %intel')
-    depends_on('amrex@19.08+sundials', when='@0.5.0 %gcc')
+    depends_on('amrex@develop', when='@develop %intel')
+    depends_on('amrex@develop', when='@develop %gcc')
+    depends_on('amrex@19.08', when='@0.5.0 %intel')
+    depends_on('amrex@19.08', when='@0.5.0 %gcc')
     depends_on('amrex@18.10.1', when='@0.4.0 %intel')
     depends_on('amrex@18.10.1', when='@0.4.0 %gcc')
 
