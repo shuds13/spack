@@ -37,8 +37,8 @@ class Xsdk(BundlePackage):
             description='Enable precice package build')
     variant('butterflypack', default=True, description='Enable butterflypack package build')
 
-    depends_on('hypre@develop~internal-superlu+superlu-dist+shared', when='@develop')
-    depends_on('hypre@2.18.2~internal-superlu+superlu-dist+shared', when='@0.5.0')
+    depends_on('hypre@develop+superlu-dist+shared', when='@develop')
+    depends_on('hypre@2.18.2+superlu-dist+shared', when='@0.5.0')
     depends_on('hypre@2.15.1~internal-superlu', when='@0.4.0')
     depends_on('hypre@2.12.1~internal-superlu', when='@0.3.0')
     depends_on('hypre@xsdk-0.2.0~internal-superlu', when='@xsdk-0.2.0')
